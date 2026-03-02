@@ -1,0 +1,31 @@
+{
+  "name": "dummyjson-api-auditing-ts",
+  "version": "1.0.0",
+  "description": "API Automation tests for dummyjson_API_Auditing_TS",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "test:report": "npx playwright show-report",
+    "test:trace": "npx playwright show-trace",
+    "test:analyze": "npx tsx utils/test-report-analyzer.ts",
+    "test:api": "npx playwright test tests/api/",
+    "lint": "eslint tests/"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.41.0",
+    "@types/node": "^20.10.0",
+    "ajv": "^8.12.0",
+    "ajv-formats": "^2.1.1",
+    "dotenv": "^16.4.1",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

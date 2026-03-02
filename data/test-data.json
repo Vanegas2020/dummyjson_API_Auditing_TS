@@ -1,0 +1,12 @@
+{
+  "Users": {
+    "endpoint": "GET /users"
+  },
+  "Emily": {
+    "endpoint": "GET /users?limit=10&skip=0",
+    "queryParams": {
+      "limit": "10",
+      "skip": "0"
+    }
+  }
+}
