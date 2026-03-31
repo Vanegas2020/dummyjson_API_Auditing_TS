@@ -2,20 +2,23 @@
   "name": "dummyjson-api-auditing-ts",
   "version": "1.0.0",
   "description": "API Automation tests for dummyjson_API_Auditing_TS",
+  "license": "UNLICENSED",
+  "private": true,
   "scripts": {
-    "test": "npx playwright test",
-    "test:headed": "npx playwright test --headed",
-    "test:ui": "npx playwright test --ui",
-    "test:debug": "npx playwright test --debug",
-    "test:report": "npx playwright show-report",
-    "test:trace": "npx playwright show-trace",
+    "test": "node --max-old-space-size=4096 node_modules/.bin/playwright test",
+    "test:headed": "node --max-old-space-size=4096 node_modules/.bin/playwright test --headed",
+    "test:ui": "node --max-old-space-size=4096 node_modules/.bin/playwright test --ui",
+    "test:debug": "node --max-old-space-size=4096 node_modules/.bin/playwright test --debug",
+    "test:report": "node --max-old-space-size=4096 node_modules/.bin/playwright show-report",
+    "test:trace": "node --max-old-space-size=4096 node_modules/.bin/playwright show-trace",
     "test:analyze": "npx tsx utils/test-report-analyzer.ts",
-    "test:api": "npx playwright test tests/api/",
+    "test:api": "node --max-old-space-size=4096 node_modules/.bin/playwright test",
     "lint": "eslint tests/"
   },
   "devDependencies": {
-    "@playwright/test": "^1.41.0",
-    "@types/node": "^20.10.0",
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.50.0",
+    "@types/node": "^22.0.0",
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
     "dotenv": "^16.4.1",
@@ -23,7 +26,7 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.0.0"
   },
   "dependencies": {
     "playwright": "^1.58.2"

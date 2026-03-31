@@ -8,6 +8,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+/** Remove ANSI/VT100 escape sequences from terminal output */
+function stripAnsi(str: string): string {
+  // eslint-disable-next-line no-control-regex
+  return str.replace(/\x1B\[[0-9;]*[mGKHF]/g, '').replace(/\x1B\([A-Z]/g, '');
+}
+
 interface ErrorClassification {
   type: 'code' | 'api' | 'environment' | 'unknown';
   category: string;
@@ -131,7 +137,8 @@ function analyzeResults(resultsPath: string): ReportSummary {
               passed++;
             } else if (status === 'failed') {
               failed++;
-              const errorMessage = latestResult?.error?.message || latestResult?.errors?.[0]?.message || '';
+              const rawMessage = latestResult?.error?.message || latestResult?.errors?.[0]?.message || '';
+              const errorMessage = stripAnsi(rawMessage);
               analyzed.errorMessage = errorMessage;
               analyzed.errorClassification = classifyError(errorMessage);
             } else if (status === 'skipped') {

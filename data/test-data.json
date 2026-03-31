@@ -2,11 +2,20 @@
   "Users": {
     "endpoint": "GET /users"
   },
-  "Emily": {
+  "AllUsers": {
     "endpoint": "GET /users?limit=10&skip=0",
     "queryParams": {
       "limit": "10",
       "skip": "0"
     }
+  },
+  "Emily": {
+    "endpoint": "GET /users/search?q=Emily",
+    "queryParams": {
+      "q": "Emily"
+    }
+  },
+  "Todos": {
+    "endpoint": "GET /users/1/todos"
   }
 }

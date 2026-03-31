@@ -17,7 +17,7 @@ export const testStats: TestStats = {
   totalScenarios: 0,
   byTestingType: {},
   estimatedDuration: 0,
-  generatedAt: '2026-03-02T01:21:07.767Z'
+  generatedAt: '2026-03-31T03:07:34.797Z'
 };
 
 export function getTestStats(): TestStats {

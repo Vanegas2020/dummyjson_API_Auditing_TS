@@ -46,15 +46,15 @@
     <div class="container">
         <header>
             <h1>🧪 API Test Report</h1>
-            <p class="metadata">Generated: 2026-03-02T01:30:07.157Z</p>
+            <p class="metadata">Generated: 2026-03-31T03:13:02.747Z</p>
         </header>
 
         <div class="summary-cards">
-            <div class="card total"><div class="card-value">64</div><div class="card-label">Total Tests</div></div>
-            <div class="card passed"><div class="card-value">60</div><div class="card-label">Passed</div></div>
-            <div class="card failed"><div class="card-value">4</div><div class="card-label">Failed</div></div>
+            <div class="card total"><div class="card-value">124</div><div class="card-label">Total Tests</div></div>
+            <div class="card passed"><div class="card-value">124</div><div class="card-label">Passed</div></div>
+            <div class="card failed"><div class="card-value">0</div><div class="card-label">Failed</div></div>
             <div class="card skipped"><div class="card-value">0</div><div class="card-label">Skipped</div></div>
-            <div class="card rate"><div class="card-value">93.8%</div><div class="card-label">Pass Rate</div></div>
+            <div class="card rate"><div class="card-value">100.0%</div><div class="card-label">Pass Rate</div></div>
         </div>
 
         <div class="charts-section">
@@ -69,53 +69,6 @@
         </div>
 
         
-        <div class="errors-section">
-            <h2 class="section-title">❌ Failed Tests Analysis</h2>
-            
-                <div class="error-item">
-                    <div class="error-title">[CP-AUD-06] GET /users?limit=10&skip=0 - JWT alg:none Attack Returns 401/403</div>
-                    <span class="error-category api">Authentication</span>
-                    <div class="error-message">Error: JWT alg:none must be rejected (401/403/404/422)
-
-[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
-
-Expected value: [32m200[39m
-Received ...</div>
-                </div>
-            
-                <div class="error-item">
-                    <div class="error-title">[CP-AUD-06] GET /users - JWT alg:none Attack Returns 401/403</div>
-                    <span class="error-category api">Authentication</span>
-                    <div class="error-message">Error: JWT alg:none must be rejected (401/403/404/422)
-
-[2mexpect([22m[31mreceived[39m[2m).[22mtoContain[2m([22m[32mexpected[39m[2m) // indexOf[22m
-
-Expected value: [32m200[39m
-Received ...</div>
-                </div>
-            
-                <div class="error-item">
-                    <div class="error-title">[CP-AUD-02] GET /users?limit=10&skip=0 - Command Injection via Query Rejected</div>
-                    <span class="error-category unknown">Unknown</span>
-                    <div class="error-message">Error: Response must not contain system output for: ; ls
-
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeFalsy[2m()[22m
-
-Received: [31mtrue[39m</div>
-                </div>
-            
-                <div class="error-item">
-                    <div class="error-title">[CP-AUD-02] GET /users - Command Injection via Query Rejected</div>
-                    <span class="error-category unknown">Unknown</span>
-                    <div class="error-message">Error: Response must not contain system output for: ; ls
-
-[2mexpect([22m[31mreceived[39m[2m).[22mtoBeFalsy[2m()[22m
-
-Received: [31mtrue[39m</div>
-                </div>
-            
-        </div>
-        
     </div>
 
     <script>
@@ -125,7 +78,7 @@ Received: [31mtrue[39m</div>
             data: {
                 labels: ['Passed', 'Failed', 'Skipped'],
                 datasets: [{
-                    data: [60, 4, 0],
+                    data: [124, 0, 0],
                     backgroundColor: ['#10B981', '#EF4444', '#F59E0B'],
                     borderWidth: 2
                 }]
@@ -140,7 +93,7 @@ Received: [31mtrue[39m</div>
                 labels: ['Code', 'API', 'Environment', 'Unknown'],
                 datasets: [{
                     label: 'Errors',
-                    data: [0, 2, 0, 2],
+                    data: [0, 0, 0, 0],
                     backgroundColor: ['#EF4444', '#F59E0B', '#3B82F6', '#6B7280']
                 }]
             },

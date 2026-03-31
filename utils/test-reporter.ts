@@ -38,10 +38,8 @@ export default class TestReporter implements Reporter {
   }
 
   private buildJsonPayload(): object {
-    return {
-      config: {},
-      suites: this.rootSuite ? this.rootSuite.suites.map(s => this.serializeSuite(s)) : [],
-    };
+    const allSuites = this.rootSuite ? this.rootSuite.suites.map(s => this.serializeSuite(s)) : [];
+    return { config: {}, suites: allSuites };
   }
 
   private serializeSuite(suite: Suite): object {

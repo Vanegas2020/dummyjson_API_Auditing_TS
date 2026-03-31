@@ -1,34 +1,34 @@
 import { test as base, APIRequestContext, request } from '@playwright/test';
 
-/**
- * Extends the basic Playwright test with a pre-configured API client
- * Handles Authentication and Global Headers automatically.
- */
 interface ApiFixtures {
   api: APIRequestContext;
 }
 
 export const test = base.extend<ApiFixtures>({
   api: async ({}, use) => {
-    // 1. Prepare Headers
     const headers: Record<string, string> = {
-      'Content-Type': 'application/json',
       'Accept': 'application/json',
+      'Content-Type': 'application/json',
     };
 
-    // 2. Inject Auth Credentials
+    
+    const username = (process.env['API_USERNAME'] ?? process.env['API_KEY'] ?? "");
+    const password = (process.env['API_PASSWORD'] ?? "");
+    if (username && password) {
+      const encoded = Buffer.from(username + ':' + password).toString('base64');
+      headers['Authorization'] = 'Basic ' + encoded;
+    } else if (username && !password) {
+      // Fallback for API Key if passed as username without password
+      headers['X-API-KEY'] = username;
+    }
     
 
-    // 3. Create Context
     const context = await request.newContext({
-      baseURL: process.env.BASE_URL || 'https://dummyjson.com',
+      baseURL: (process.env.BASE_URL ?? 'https://dummyjson.com').replace(/\/$/, ''),
       extraHTTPHeaders: headers,
     });
 
-    // 4. Use context in test
     await use(context);
-
-    // 5. Cleanup
     await context.dispose();
   },
 });
